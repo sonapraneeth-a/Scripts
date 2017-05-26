@@ -18,4 +18,11 @@ rbenv install 2.4.0
 rbenv global 2.4.0
 ruby -v
 gem install bundler
-gem install jekyll
+gem install jekyll --no-rdoc --no-ri
+gem install github-pages --no-rdoc --no-ri
+gem install redcarpet
+gem install jekyll-last-modified-at
+gem install bundler
+gem install jekyll-paginate
+gem install sass
+gem install html-proofer
