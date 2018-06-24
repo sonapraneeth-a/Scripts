@@ -1,13 +1,35 @@
 #!/bin/bash
 
+# Latest version of node. Stable version: 8.x
 sudo apt-get update
 curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 sudo apt-get install -y nodejs
+
 sudo npm install madoko -g
 
+# Latest version of git
 sudo add-apt-repository ppa:git-core/ppa
 sudo apt-get update
 sudo apt-get -y install git
+
+# Net speed utility to check internet speed
+sudo apt-add-repository ppa:fixnix/netspeed
+sudo apt-get update
+sudo apt-get install indicator-netspeed-unity
+
+# Hotspot commands
+sudo apt-get install net-tools
+git clone https://github.com/oblique/create_ap.git
+cd create_ap
+sudo make install
+sudo apt install hostapd
+sudo create_ap wlp3s0 wlp3s0 <username> <password>
+
+# Chrome
+sudo apt-get install libxss1 libappindicator1 libindicator7
+cd ~/Downloads/Softwares/
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo dpkg -i google-chrome*.deb
 
 sudo apt-get -y install vim vim-gnome emacs
 sudo apt-get -y install linuxdcpp
