@@ -1,6 +1,8 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+alias ls='ls -G'
+
 # Path to your oh-my-zsh installation.
 export ZSH="/home/sonapraneeth/.oh-my-zsh"
 
@@ -12,9 +14,10 @@ ZSH_THEME="powerlevel9k/powerlevel9k" # "cobalt2"
 
 #POWERLEVEL9K_MODE="nerdfont-complete"
 POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs newline)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history date time battery newline)
-
+#POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs newline)
+#POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history date time battery newline)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status root_indicator background_jobs history date time battery newline context dir vcs newline)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -69,7 +72,7 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs histor
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git, vi-mode, tmux
+  git, vi-mode, tmux, zsh-completions, zsh-autosuggestions, zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
